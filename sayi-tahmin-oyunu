@@ -1,0 +1,38 @@
+// C# ile sayı tahmin oyunu
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+
+namespace _sayitahminoyunu
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+              Random rnd = new Random();
+            int rastgele = rnd.Next(1, 150);
+            int tahmin;
+            Console.WriteLine("(1-150) Bir sayi tuttum, tahmininiz: ");
+            tahmin = Convert.ToInt32(Console.ReadLine());
+            while (rastgele != tahmin)
+            {
+                if (rastgele < tahmin)
+                {
+                    Console.WriteLine("Tahmin gercek degerin ustunde.");
+                    tahmin = Convert.ToInt32(Console.ReadLine());
+                }
+                else if (rastgele > tahmin)
+                {
+                    Console.WriteLine("Tahmin gercek degerin altında.");
+                    tahmin = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            Console.WriteLine("Tebrikler sonucu bildiniz...");
+        }
+    }
+}
